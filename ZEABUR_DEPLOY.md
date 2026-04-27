@@ -33,6 +33,14 @@ DATABASE_URL=sqlite:////data/ai_polish.db
 
 Without the volume, SQLite data will be lost when the container is recreated.
 
+The container also stores the runtime `.env` file at:
+
+```text
+/data/.env
+```
+
+At startup, `/app/.env` and `/app/backend/.env` are linked to this file so the admin system configuration page can save settings without losing them on redeploy.
+
 ## Required Environment Variables
 
 Set these in Zeabur:
